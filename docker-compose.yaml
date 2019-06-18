@@ -1,0 +1,17 @@
+version: "3"
+services:
+  jenkins:
+    build: image-jenkins/.
+    ports:
+      - '8080:8080'
+      - '50000:50000'
+    volumes:
+      - './jenkins:/var/jenkins_home'
+      - './notebook:/mnt/notebook:ro'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+  jupyter:
+    build: image-jupyter/.
+    ports:
+      - '8888:8888'
+    volumes:
+      - './notebook:/home/jovyan'
