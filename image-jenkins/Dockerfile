@@ -11,4 +11,7 @@ RUN usermod -aG docker jenkins
 
 RUN mkdir /mnt/notebook
 
+COPY ./run-notebook.sh /usr/local/sbin/
+RUN chmod +x /usr/local/sbin/run-notebook.sh
+
 USER ${user}

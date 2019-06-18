@@ -9,6 +9,8 @@ services:
       - './jenkins:/var/jenkins_home'
       - './notebook:/mnt/notebook:ro'
       - '/var/run/docker.sock:/var/run/docker.sock'
+    environment:
+      - 'JUPYTER_CONTAINER_NAME=jenkins-selenium_jupyter_1'
   jupyter:
     build: image-jupyter/.
     ports:
