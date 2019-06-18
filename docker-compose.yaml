@@ -12,6 +12,7 @@ services:
     environment:
       - 'JUPYTER_CONTAINER_NAME=jenkins-selenium_jupyter_1'
       - 'TZ=JST-9'
+    restart: always
   jupyter:
     build: image-jupyter/.
     ports:
@@ -20,3 +21,4 @@ services:
       - './notebook:/home/jovyan'
     environment:
       - 'TZ=JST-9'
+    restart: always
