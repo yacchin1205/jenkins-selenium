@@ -11,9 +11,12 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
     environment:
       - 'JUPYTER_CONTAINER_NAME=jenkins-selenium_jupyter_1'
+      - 'TZ=JST-9'
   jupyter:
     build: image-jupyter/.
     ports:
       - '8888:8888'
     volumes:
       - './notebook:/home/jovyan'
+    environment:
+      - 'TZ=JST-9'
