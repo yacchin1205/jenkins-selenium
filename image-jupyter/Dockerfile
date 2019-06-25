@@ -26,4 +26,7 @@ RUN apt-get update && \
     locale-gen ja_JP.UTF-8
 ENV LC_ALL ja_JP.UTF-8
 
+COPY ./papermillmill /usr/local/sbin/
+RUN chmod +x /usr/local/sbin/papermillmill
+
 USER ${NB_USER}
